@@ -186,7 +186,7 @@
   SEN KİMSİN
   When using this, you will probably need to set font-variation-settings
   explicitly, e.g.
-  
+  burası
     * { font-variation-settings: "slnt" 0deg }
     .italic { font-variation-settings: "slnt" 10deg }
   
