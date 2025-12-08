@@ -79,14 +79,16 @@ function theme_almondb_get_extra_scss($theme) {
  * @return bool
  */
 function theme_almondb_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = []) {
-    if ($context->contextlevel == CONTEXT_SYSTEM && ($filearea === 'logo' || $filearea === 'loginbackgroundimage' ||
+    if (
+        $context->contextlevel == CONTEXT_SYSTEM && ($filearea === 'logo' || $filearea === 'loginbackgroundimage' ||
         $filearea === 'backgroundimage' || substr($filearea, 0, 11) === 'sliderimage' ||
         substr($filearea, 0, 5) === 'block' || substr($filearea, 0, 3) === 'img')) {
         $theme = theme_config::load('almondb');
         if (!array_key_exists('cacheability', $options)) {
             $options['cacheability'] = 'public';
         }
-        return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+        return $theme->setting_file_serve($filearea, $args, $forcedownload, $options
+        );
     } else {
         send_file_not_found();
     }
