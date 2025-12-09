@@ -383,7 +383,8 @@ function theme_almondb_frontpageblock08() {
                 $templatecontext['block08'][$j]['teachername'] = format_string($user->firstname . " " . $user->lastname);
                 $templatecontext['block08'][$j]['description'] = format_text($description);
                 $templatecontext['block08'][$j]['userpicture'] = $OUTPUT->user_picture($user, ['class' => '', 'size' => '250']);
-                $templatecontext['block08'][$j]['userURL'] = new moodle_url('/user/profile.php', ['id' => $roleassignment->userid ]);
+                $templatecontext['block08'][$j]['userURL'] =
+                    new moodle_url('/user/profile.php', ['id' => $roleassignment->userid ]);
                 $userpicture = new user_picture($user);
                 $userpicture->size = 512;
                 $url = $userpicture->get_url($PAGE)->out(false);
