@@ -41,7 +41,7 @@ $page->add($setting);
 $name = 'theme_almondb/block02count';
 $title = get_string('block02count', 'theme_almondb');
 $description = get_string('block02countdesc', 'theme_almondb');
-$description = $description.get_string('underline', 'theme_almondb');
+$description = $description . get_string('underline', 'theme_almondb');
 $default = 3;
 $options = [];
 for ($i = 2; $i < 5; $i++) {
@@ -56,45 +56,45 @@ $count = get_config('theme_almondb', 'block02count');
 // ------------------------------------------------------------------------------------.
 for ($i = 1; $i < $count + 1; $i++) {
      // Block 02 icon.
-     $name = 'theme_almondb/block02icon'.$i;
+     $name = 'theme_almondb/block02icon' . $i;
      $title = get_string('block02icon', 'theme_almondb', ['block' => $i]);
      $description = get_string('block02icondesc', 'theme_almondb');
-     $default = get_string('block02icondefault'.$i, 'theme_almondb');
+     $default = get_string('block02icondefault' . $i, 'theme_almondb');
      $options = [];
      $options[] = theme_almondb_get_core_icon_list();
      $setting = new admin_setting_configselect($name, $title, $description, $default, $options);
      $setting->set_updatedcallback('theme_reset_all_caches');
      $page->add($setting);
      // Block 02 img.
-     $name = 'theme_almondb/sliderimageblock02img'.$i;
+     $name = 'theme_almondb/sliderimageblock02img' . $i;
      $title = get_string('sliderimageblock02img', 'theme_almondb', ['block' => $i]);
      $description = get_string('block02imgdesc', 'theme_almondb');
-     $setting = new admin_setting_configstoredfile($name, $title, $description, 'sliderimageblock02img'.$i);
+     $setting = new admin_setting_configstoredfile($name, $title, $description, 'sliderimageblock02img' . $i);
      $setting->set_updatedcallback('theme_reset_all_caches');
      $page->add($setting);
      // Block 02 title.
-     $name = 'theme_almondb/block02title'.$i;
+     $name = 'theme_almondb/block02title' . $i;
      $title = get_string('block02title', 'theme_almondb', ['block' => $i]);
      $description = get_string('block02titledesc', 'theme_almondb');
      $default = get_string('block02titledefault', 'theme_almondb');
      $setting = new admin_setting_configtext($name, $title, $description, $default);
      $page->add($setting);
      // Block 02 caption.
-     $name = 'theme_almondb/block02caption'.$i;
+     $name = 'theme_almondb/block02caption' . $i;
      $title = get_string('block02caption', 'theme_almondb', ['block' => $i]);
      $description = get_string('block02captiondesc', 'theme_almondb');
      $default = get_string('block02captiondefault', 'theme_almondb');
      $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
      $page->add($setting);
      // Block 02 button.
-     $name = 'theme_almondb/block02button'.$i;
+     $name = 'theme_almondb/block02button' . $i;
      $title = get_string('block02button', 'theme_almondb', ['block' => $i]);
      $description = get_string('block02buttondesc', 'theme_almondb');
      $default = get_string('button', 'theme_almondb');
      $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_TEXT);
      $page->add($setting);
      // Block 02 button link.
-     $name = 'theme_almondb/block02buttonlink'.$i;
+     $name = 'theme_almondb/block02buttonlink' . $i;
      $title = get_string('block02buttonlink', 'theme_almondb', ['block' => $i]);
      $description = get_string('block02buttonlinkdesc', 'theme_almondb');
      $description = $description.get_string('underline', 'theme_almondb');

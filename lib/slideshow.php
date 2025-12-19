@@ -37,7 +37,7 @@ function theme_almondb_slideshow() {
         return $templatecontext;
     }
     $templatecontext['slideropacity'] = $theme->settings->slideropacity;
-    $templatecontext['slider'.$theme->settings->sliderdesign] = $theme->settings->sliderdesign;
+    $templatecontext['slider' . $theme->settings->sliderdesign] = $theme->settings->sliderdesign;
     $templatecontext['slidershowheight'] = $theme->settings->slidershowheight;
     $slidercount = $theme->settings->slidercount;
     for ($i = 1, $j = 0; $i <= $slidercount; $i++, $j++) {
@@ -51,7 +51,7 @@ function theme_almondb_slideshow() {
         $templatecontext['slides'][$j]['active'] = false;
         $image = $theme->setting_file_url($sliderimage, $sliderimage);
         if (empty($image)) {
-            $image = $OUTPUT->image_url('almondb/slider/'.$i, 'theme');
+            $image = $OUTPUT->image_url('almondb/slider/' . $i, 'theme');
         }
         $templatecontext['slides'][$j]['image'] = $image;
         $templatecontext['slides'][$j]['title'] = format_string($theme->settings->$slidertitle);

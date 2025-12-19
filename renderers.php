@@ -78,7 +78,7 @@ class theme_almondb_core_course_renderer extends core_course_renderer {
                 $file->get_filearea() . $file->get_filepath() . $file->get_filename(), !$isimage);
             if ($isimage) {
                 $contentimages .= html_writer::start_tag('div',
-                    ['class' => 'courseimage single-course', 'style' => 'background-image: url('.$url.');']);
+                    ['class' => 'courseimage single-course', 'style' => 'background-image: url(' . $url . ');']);
                 // Teacher img.
                 $contentimages .= html_writer::start_tag('ul', ['class' => 'teachers']);
                 foreach ($course->get_course_contacts() as $coursecontact) {
@@ -91,9 +91,9 @@ class theme_almondb_core_course_renderer extends core_course_renderer {
                     $picture = $userpicture->get_url($this->page)->out(false);
                     $name = " <div class='chip h6'><img src='{$picture}'";
                     $name .= " class='border border-secondary' title='{$namesrole}' data-bs-toggle='tooltip'";
-                    $name .= " alt='{$coursecontact['username']}'/>".html_writer::link(new moodle_url('/user/view.php',
+                    $name .= " alt='{$coursecontact['username']}'/>" . html_writer::link(new moodle_url('/user/view.php',
                             ['id' => $coursecontact['user']->id, 'course' => SITEID]),
-                            " ".$coursecontact['username'])."</div>";
+                            " " . $coursecontact['username']) . "</div>";
                     $contentimages .= html_writer::tag('li', $name);
                 }
                 $contentimages .= html_writer::end_tag('ul');
@@ -101,7 +101,7 @@ class theme_almondb_core_course_renderer extends core_course_renderer {
                 $contentimages .= html_writer::end_tag('div');
             } else {
                 $image = $this->output->pix_icon(file_file_icon($file), $file->get_filename(), 'moodle');
-                $filename = html_writer::tag('span', $image, ['class' => 'fp-icon']).
+                $filename = html_writer::tag('span', $image, ['class' => 'fp-icon']) .
                     html_writer::tag('span', $file->get_filename(), ['class' => 'fp-filename']);
                 $contentfiles .= html_writer::tag('span',
                     html_writer::link($url, $filename),
@@ -121,9 +121,10 @@ class theme_almondb_core_course_renderer extends core_course_renderer {
                 $picture = $userpicture->get_url($this->page)->out(false);
                 $name = " <div class='chip h6'><img src='{$picture}'";
                 $name .= " class='border border-secondary' title='{$namesrole}' data-bs-toggle='tooltip'";
-                $name .= " alt='{$coursecontact['username']}'/>".html_writer::link(new moodle_url('/user/view.php',
-                        ['id' => $coursecontact['user']->id, 'course' => SITEID]),
-                        " ".$coursecontact['username'])."</div>";
+                $name .= " alt='{$coursecontact['username']}'/>" . html_writer::link(new moodle_url('/user/view.php',
+                    ['id' => $coursecontact['user']->id,
+                    'course' => SITEID]),
+                    " " . $coursecontact['username']) . "</div>";
                 $contentimages .= html_writer::tag('li', $name);
             }
             $contentimages .= html_writer::end_tag('ul');
@@ -204,7 +205,7 @@ class theme_almondb_core_blog_renderer extends core_blog_renderer {
         $userurlparams = ['id' => $entry->renderable->user->id, 'course' => $this->page->course->id];
         $by->name = html_writer::link(new moodle_url('/user/view.php', $userurlparams), $fullname);
         $by->date = userdate($entry->created);
-        $o .= $this->output->container( $by->name ." - ".$by->date, 'author');
+        $o .= $this->output->container( $by->name . " - " . $by->date, 'author');
         // Title.
         $titlelink = html_writer::link(new moodle_url('/blog/index.php',
                                                     ['entryid' => $entry->id]),
@@ -234,7 +235,7 @@ class theme_almondb_core_blog_renderer extends core_blog_renderer {
         // Last modification.
         if ($entry->created != $entry->lastmodified) {
             $o .= "<div class= 'almond-blog-date'>";
-            $o .= $this->output->container(get_string('modified').': '.userdate($entry->lastmodified));
+            $o .= $this->output->container(get_string('modified') . ': ' . userdate($entry->lastmodified));
             $o .= "</div>";
         }
 

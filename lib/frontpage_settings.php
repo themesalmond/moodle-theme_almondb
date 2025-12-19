@@ -30,7 +30,7 @@
 function theme_almondb_frontpage_section() {
     $theme = theme_config::load('almondb');
     // Front page navbar frontpagenavlightdark?
-    $templatecontext['frontpagenavchoice'.$theme->settings->frontpagenavchoice] = $theme->settings->frontpagenavchoice;
+    $templatecontext['frontpagenavchoice' . $theme->settings->frontpagenavchoice] = $theme->settings->frontpagenavchoice;
     $templatecontext['navbarcontainer'] = $theme->settings->navbarcontainer;
     $templatecontext['header3phone'] = $theme->settings->header3phone;
     // Front page navbar logo select.
@@ -74,14 +74,19 @@ function theme_almondb_frontpagecolor() {
 function almondb_get_course_image($id) {
     global $CFG;
     $url = '';
-    require_once( $CFG->libdir . '/filelib.php' );
-    $context = context_course::instance( $id );
+    require_once($CFG->libdir . '/filelib.php');
+    $context = context_course::instance($id);
     $fs = get_file_storage();
-    $files = $fs->get_area_files( $context->id, 'course', 'overviewfiles', 0 );
+    $files = $fs->get_area_files($context->id, 'course', 'overviewfiles', 0);
     foreach ($files as $f) {
         if ($f->is_valid_image()) {
-            $url = moodle_url::make_pluginfile_url( $f->get_contextid(),
-                $f->get_component(), $f->get_filearea(), null, $f->get_filepath(), $f->get_filename(), false );
+            $url = moodle_url::make_pluginfile_url($f->get_contextid(),
+            $f->get_component(),
+            $f->get_filearea(),
+            null,
+            $f->get_filepath(),
+            $f->get_filename(),
+            false);
         }
     }
     return $url;
@@ -100,8 +105,13 @@ function almondb_get_blog_post_image($id) {
     $files = $fs->get_area_files($syscontext->id, 'blog', 'attachment', $id);
     foreach ($files as $f) {
         if ($f->is_valid_image()) {
-            $url = moodle_url::make_pluginfile_url( $f->get_contextid(),
-                $f->get_component(), $f->get_filearea(), $id, $f->get_filepath(), $f->get_filename(), false );
+            $url = moodle_url::make_pluginfile_url($f->get_contextid(),
+            $f->get_component(),
+            $f->get_filearea(),
+            $id,
+            $f->get_filepath(),
+            $f->get_filename(),
+            false);
         }
     }
     return $url;
@@ -120,8 +130,13 @@ function almondb_get_user_image($id) {
     $files = $fs->get_area_files( $context->id, 'user', 'icon', 'almondb', false);
     foreach ($files as $f) {
         if ($f->is_valid_image()) {
-            $url = moodle_url::make_pluginfile_url( $f->get_contextid(), $f->get_component(),
-                $f->get_filearea(), null, $f->get_filepath(), $f->get_filename(), false );
+            $url = moodle_url::make_pluginfile_url($f->get_contextid(),
+            $f->get_component(),
+            $f->get_filearea(),
+            null,
+            $f->get_filepath(),
+            $f->get_filename(),
+            false);
         }
     }
     return $url;
@@ -150,7 +165,7 @@ function theme_almondb_links($links) {
     $websettings = explode("\n", $weblink);
     foreach ($websettings as $key => $settingval) {
         $expset = explode("|", $settingval);
-        if (isset($expset[0]) && isset($expset[1]) ) {
+        if (isset($expset[0]) && isset($expset[1])) {
             list($ltxt, $lurl) = $expset;
         } else {
             $ltxt = $expset[0];
@@ -162,7 +177,7 @@ function theme_almondb_links($links) {
         if (empty($ltxt)) {
             continue;
         }
-        $content .= '<li><a class="text-decoration-none" href="'.$lurl.'" target="_blank">'.$ltxt.'</a></li>';
+        $content .= '<li><a class="text-decoration-none" href="' . $lurl . '" target="_blank">' . $ltxt . '</a></li>';
     }
     return $content;
 }
@@ -172,7 +187,7 @@ function theme_almondb_links($links) {
  * @param string $mobil header mobil links.
  * @return content.
  */
-function theme_almondb_header_links($links, $mobil ) {
+function theme_almondb_header_links($links, $mobil) {
     $weblink = $links;
     $content = "";
     $lurl = "";
@@ -188,7 +203,7 @@ function theme_almondb_header_links($links, $mobil ) {
         if (!empty(trim($settingval))) {
             $expset = explode("|", $settingval);
             $j = uniqid();
-            if (isset($expset[0]) && !empty($expset[0]) ) {
+            if (isset($expset[0]) && !empty($expset[0])) {
                 if (substr($expset[0], 0, 1) <> "-") {
                     if ($i != 0) {
                         $content .= "</div></div>";
@@ -201,14 +216,16 @@ function theme_almondb_header_links($links, $mobil ) {
                     if (isset($expset[1])) {
                         $lurl = trim($expset[1]);
                         $content .= "<div class='nav-item'>";
-                        $content .= "<a class='nav-item nav-link' href='".$lurl."' target='".$blank."'>".$ltxt."</a><div>";
+                        $content .= "<a class='nav-item nav-link' ";
+                        $content .= "href='" . $lurl . "'";
+                        $content .= " target='" . $blank . "'>" . $ltxt . "</a><div>";
                     } else {
-                        $content .= "<div class='position-relative nav-item' id='dropdown-custom-".$j."'>";
-                        $content .= "<a class='dropdown-toggle nav-link' id='drop-down-".$j."' data-bs-toggle='dropdown'";
-                        $content .= " aria-haspopup='true' aria-expanded='false' href='#' title='".$ltxt."'";
-                        $content .= " aria-controls='drop-down-menu-".$j."'>".$ltxt."</a>";
+                        $content .= "<div class='position-relative nav-item' id='dropdown-custom-" . $j . "'>";
+                        $content .= "<a class='dropdown-toggle nav-link' id='drop-down-" . $j . "' data-bs-toggle='dropdown'";
+                        $content .= " aria-haspopup='true' aria-expanded='false' href='#' title='" . $ltxt . "'";
+                        $content .= " aria-controls='drop-down-menu-" . $j . "'>" . $ltxt . "</a>";
                         $content .= "<div class='dropdown-menu' role='menu'
-                                id='drop-down-menu-".$j."' aria-labelledby='drop-down-".$j."'>";
+                                id='drop-down-menu-" . $j . "' aria-labelledby='drop-down-" . $j . "'>";
                     }
                 } else {
                     $blank = "_self";
@@ -220,7 +237,7 @@ function theme_almondb_header_links($links, $mobil ) {
                         $ltxt = trim(substr($ltxt, 1, strlen($ltxt)));
                         $lurl = trim($lurl);
                         $content .= "<a class='dropdown-item' role='menuitem'
-                                href='".$lurl."' target='".$blank."'  title='".$ltxt. "'>".$ltxt."</a>";
+                            href='" . $lurl . "' target='" . $blank . "'  title='" . $ltxt . "'>" . $ltxt . "</a>";
                     }
                 }
             } else {
@@ -244,6 +261,6 @@ function theme_almondb_random_color() {
     * $randcolor = "#".substr(md5(rand()), 0, 6);.
     * $randcolor = '#'.substr(str_shuffle('ABCDEF0123456789'), 0, 6);.
     */
-    $randcolor = "rgba(".rand(0, 255).", ".rand(50, 255).", ".rand(25, 255).", 0.3)";
+    $randcolor = "rgba(" . rand(0, 255) . ", " . rand(50, 255) . ", " . rand(25, 255) . ", 0.3)";
     return $randcolor;
 }
