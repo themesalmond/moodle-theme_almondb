@@ -43,7 +43,7 @@ $description = get_string('block11designdesc', 'theme_almondb');
 $default = 1;
 $options = [];
 for ($i = 1; $i <= 2; $i++) {
-     $options[$i] = $i;
+    $options[$i] = $i;
 }
 $setting = new admin_setting_configselect($name, $title, $description, $default, $options);
 $setting->set_updatedcallback('theme_reset_all_caches');
@@ -55,7 +55,7 @@ $description = get_string('block11countdesc', 'theme_almondb');
 $default = 3;
 $options = [];
 for ($i = 2; $i <= 10; $i++) {
-     $options[$i] = $i;
+    $options[$i] = $i;
 }
 $setting = new admin_setting_configselect($name, $title, $description, $default, $options);
 $setting->set_updatedcallback('theme_reset_all_caches');

@@ -15,44 +15,44 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 <div class="block08design5 blockbgwhite ">
-  <div class="container">
-    <div class="row">
-        <div class="col-md-12" >
-            <div class="section-title-fp hytext text-center blockbgwhite-b">
-                <h4>{{block08header}}</h4>
-            </div>
-            <div class="item-content text-center blockbgwhite-b">    
-                  {{{block08caption}}}
-            </div>
-        </div>
-    </div>
-    <section class="teachers archive section">
-      <div class="container">
+    <div class="container">
         <div class="row">
-          {{#block08}}
-          <div class="col-lg-4 col-md-6 col-12">
-            <!-- Single Teacher -->
-            <div class="single-teacher">
-              <div class="teacher-head overlay">
-                <img src="{{userpictureURL}}" alt="#">
-                {{#block08total}}
-                <ul class="social">
-                  <li><a href="#"><i class="fa fa-user"><span class="count" data-bs-toggle="tooltip" data-placement="top"
-                    title="{{#str}}block08tooltipstudents, theme_almondb {{/str}}"> {{studentscount}}+</span></i> </a></li>
-                  <li><a href="#"><i class="fa fa-graduation-cap"><span class="count" data-bs-toggle="tooltip" data-placement="top"
-                    title="{{#str}}block08tooltipcourse, theme_almondb {{/str}}"> {{coursecount}}+</span></i></a></li>
-                </ul>
-                {{/block08total}}
-              </div>
-              <div class="teacher-content">
-                <a href="{{userURL}}"><h4>{{teachername}}</h4></a><h4><span>Web Developer</span></h4>
-              </div>
+            <div class="col-md-12" >
+                <div class="section-title-fp hytext text-center blockbgwhite-b">
+                    <h4>{{block08header}}</h4>
+                </div>
+                <div class="item-content text-center blockbgwhite-b">    
+                    {{{block08caption}}}
+                </div>
             </div>
-            <!--/ End Single Teacher -->
-          </div>
-          {{/block08}}
         </div>
-      </div>
-    </section>
-  </div>
+        <section class="teachers archive section">
+        <div class="container">
+            <div class="row">
+                {{#block08}}
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Single Teacher -->
+                    <div class="single-teacher">
+                        <div class="teacher-head overlay">
+                            <img src="{{userpictureURL}}" alt="#">
+                            {{#block08total}}
+                            <ul class="social">
+                            <li><a href="#"><i class="fa fa-user"><span class="count" data-bs-toggle="tooltip" data-placement="top"
+                                title="{{#str}}block08tooltipstudents, theme_almondb {{/str}}"> {{studentscount}}+</span></i> </a></li>
+                            <li><a href="#"><i class="fa fa-graduation-cap"><span class="count" data-bs-toggle="tooltip" data-placement="top"
+                                title="{{#str}}block08tooltipcourse, theme_almondb {{/str}}"> {{coursecount}}+</span></i></a></li>
+                            </ul>
+                            {{/block08total}}
+                        </div>
+                        <div class="teacher-content">
+                            <a href="{{userURL}}"><h4>{{teachername}}</h4></a><h4><span>Web Developer</span></h4>
+                        </div>  
+                    </div>
+                    <!--/ End Single Teacher -->
+                </div>
+                {{/block08}}
+            </div>
+        </div>
+        </section>
+    </div>
 </div>    

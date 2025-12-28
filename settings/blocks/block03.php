@@ -61,36 +61,36 @@ $page->add($setting);
 // Block 03 general settings END.
 // ------------------------------------------------------------------------------------.
 for ($i = 1; $i <= 6; $i++) {
-     // Block 03 icon .
-     $name = 'theme_almondb/block03icon'.$i;
-     $title = get_string('block03icon', 'theme_almondb', ['block' => $i]);
-     $description = get_string('block03icondesc', 'theme_almondb');
-     $default = get_string('block03icondefault'.$i, 'theme_almondb');
-     $options = [];
-     $options[] = theme_almondb_get_core_icon_list();
-     $setting = new admin_setting_configselect($name, $title, $description, $default, $options);
-     $setting->set_updatedcallback('theme_reset_all_caches');
-     $page->add($setting);
-     // Block 03 title.
-     $name = 'theme_almondb/block03title'.$i;
-     $title = get_string('block03title', 'theme_almondb', ['block' => $i]);
-     $description = get_string('block03titledesc', 'theme_almondb');
-     $default = 'Top Investment Advisors';
-     $setting = new admin_setting_configtext($name, $title, $description, $default);
-     $page->add($setting);
-     // Block 03 caption.
-     $name = 'theme_almondb/block03caption'.$i;
-     $title = get_string('block03caption', 'theme_almondb', ['block' => $i]);
-     $description = get_string('block03captiondesc', 'theme_almondb');
-     $default = get_string('block03captiondefault', 'theme_almondb');
-     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-     $page->add($setting);
-     // Block 03 link.
-     $name = 'theme_almondb/block03link'.$i;
-     $title = get_string('block03link', 'theme_almondb', ['block' => $i]);
-     $description = get_string('block03linkdesc', 'theme_almondb');
-     $description = $description.get_string('underline', 'theme_almondb');
-     $default = get_string('buttonlink', 'theme_almondb');
-     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
-     $page->add($setting);
+    // Block 03 icon .
+    $name = 'theme_almondb/block03icon'.$i;
+    $title = get_string('block03icon', 'theme_almondb', ['block' => $i]);
+    $description = get_string('block03icondesc', 'theme_almondb');
+    $default = get_string('block03icondefault'.$i, 'theme_almondb');
+    $options = [];
+    $options[] = theme_almondb_get_core_icon_list();
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $options);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+    // Block 03 title.
+    $name = 'theme_almondb/block03title'.$i;
+    $title = get_string('block03title', 'theme_almondb', ['block' => $i]);
+    $description = get_string('block03titledesc', 'theme_almondb');
+    $default = 'Top Investment Advisors';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $page->add($setting);
+    // Block 03 caption.
+    $name = 'theme_almondb/block03caption'.$i;
+    $title = get_string('block03caption', 'theme_almondb', ['block' => $i]);
+    $description = get_string('block03captiondesc', 'theme_almondb');
+    $default = get_string('block03captiondefault', 'theme_almondb');
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $page->add($setting);
+    // Block 03 link.
+    $name = 'theme_almondb/block03link'.$i;
+    $title = get_string('block03link', 'theme_almondb', ['block' => $i]);
+    $description = get_string('block03linkdesc', 'theme_almondb');
+    $description = $description.get_string('underline', 'theme_almondb');
+    $default = get_string('buttonlink', 'theme_almondb');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $page->add($setting);
 }

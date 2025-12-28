@@ -15,48 +15,48 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 <div class="block09 block09design3 blockbgwhite">
-  <div class="container">
-      <div id="block09design3-slider" class="splide" >
-          <div class="splide__track" >
-              <ul class="splide__list " >
-                {{#block09}}
-                {{#block09background}}
+    <div class="container">
+        <div id="block09design3-slider" class="splide" >
+            <div class="splide__track" >
+                <ul class="splide__list " >
+                    {{#block09}}
+                    {{#block09background}}
+                        <li class="splide__slide ">
+                            <div class="card text-center">
+                                <div class="card-body {{^bgcolor}}single-box{{/bgcolor}} {{#bgcolor}}single-box-color{{/bgcolor}}" 
+                                            {{#imgurl}}  style= "background-image: url({{{imgurl}}});"{{/imgurl}}
+                                            {{#bgcolor}} style= "background-color:{{bgcolor}};"{{/bgcolor}}
+                                            >
+                                    <div class="{{^bgcolor}}single-box-alt{{/bgcolor}}{{#bgcolor}}single-box-alt-color{{/bgcolor}}"
+                                                style="background-color: {{sitecolor}} ;">
+                                    <a class="text-decoration-none text-white" href="{{catagoryURL}}">
+                                        <h6 class="card-title">{{#shortentext}} 37, {{catagoryname}} {{/shortentext}}</h6>
+                                    </a>
+                                    <p class="card-text text-white">{{#str}} over, theme_almondb {{/str}} {{coursecount}} {{#str}}courses, moodle {{/str}}</p>
+                                    </div>  
+                                </div>
+                            </div>
+                        </li>
+                    {{/block09background}}   
+                    {{^block09background}}
                     <li class="splide__slide ">
-                        <div class="card text-center">
-                          <div class="card-body {{^bgcolor}}single-box{{/bgcolor}} {{#bgcolor}}single-box-color{{/bgcolor}}" 
-                                    {{#imgurl}}  style= "background-image: url({{{imgurl}}});"{{/imgurl}}
-                                    {{#bgcolor}} style= "background-color:{{bgcolor}};"{{/bgcolor}}
-                                    >
-                            <div class="{{^bgcolor}}single-box-alt{{/bgcolor}}{{#bgcolor}}single-box-alt-color{{/bgcolor}}"
-                                        style="background-color: {{sitecolor}} ;">
-                              <a class="text-decoration-none text-white" href="{{catagoryURL}}">
-                                <h6 class="card-title">{{#shortentext}} 37, {{catagoryname}} {{/shortentext}}</h6>
-                              </a>
-                              <p class="card-text text-white">{{#str}} over, theme_almondb {{/str}} {{coursecount}} {{#str}}courses, moodle {{/str}}</p>
-                            </div>  
-                          </div>
+                        <div class="">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <a class="text-decoration-none hytext" href="{{catagoryURL}}">
+                                    <h6 class="card-title">{{#shortentext}} 37, {{catagoryname}} {{/shortentext}}</h6>
+                                    <p class="card-text">{{#str}} over, theme_almondb {{/str}} {{coursecount}} {{#str}}courses, moodle {{/str}}</p>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </li>
-                {{/block09background}}   
-                {{^block09background}}
-                <li class="splide__slide ">
-                  <div class="">
-                      <div class="card text-center">
-                          <div class="card-body">
-                            <a class="text-decoration-none hytext" href="{{catagoryURL}}">
-                              <h6 class="card-title">{{#shortentext}} 37, {{catagoryname}} {{/shortentext}}</h6>
-                              <p class="card-text">{{#str}} over, theme_almondb {{/str}} {{coursecount}} {{#str}}courses, moodle {{/str}}</p>
-                            </a>
-                          </div>
-                      </div>
-                  </div>
-                </li>  
-                {{/block09background}}
-                {{/block09}}    
-              </ul>
-          </div>
-      </div>
-  </div>
+                    </li>  
+                    {{/block09background}}
+                    {{/block09}}    
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>   
 <script>
 document.addEventListener( 'DOMContentLoaded', function () {

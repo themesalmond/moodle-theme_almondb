@@ -43,7 +43,7 @@ $description = get_string('block19designdesc', 'theme_almondb');
 $default = 1;
 $options = [];
 for ($i = 1; $i < 3; $i++) {
-     $options[$i] = $i;
+    $options[$i] = $i;
 }
 $setting = new admin_setting_configselect($name, $title, $description, $default, $options);
 $setting->set_updatedcallback('theme_reset_all_caches');
@@ -72,19 +72,19 @@ $page->add($setting);
 // Block 19 general settings END.
 // ------------------------------------------------------------------------------------.
 for ($i = 1; $i <= 6; $i++) {
-     // Block 19 img.
-     $name = 'theme_almondb/sliderimageblock19img'.$i;
-     $title = get_string('sliderimageblock19img', 'theme_almondb', ['block' => $i]);
-     $description = get_string('block19imgdesc', 'theme_almondb');
-     $setting = new admin_setting_configstoredfile($name, $title, $description, 'sliderimageblock19img'.$i);
-     $setting->set_updatedcallback('theme_reset_all_caches');
-     $page->add($setting);
-     // Block 19 link .
-     $name = 'theme_almondb/block19link'.$i;
-     $title = get_string('block19link', 'theme_almondb', ['block' => $i]);
-     $description = get_string('block19linkdesc', 'theme_almondb');
-     $description = $description.get_string('underline', 'theme_almondb');
-     $default = get_string('buttonlink', 'theme_almondb');
-     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
-     $page->add($setting);
+    // Block 19 img.
+    $name = 'theme_almondb/sliderimageblock19img'.$i;
+    $title = get_string('sliderimageblock19img', 'theme_almondb', ['block' => $i]);
+    $description = get_string('block19imgdesc', 'theme_almondb');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'sliderimageblock19img'.$i);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+    // Block 19 link .
+    $name = 'theme_almondb/block19link'.$i;
+    $title = get_string('block19link', 'theme_almondb', ['block' => $i]);
+    $description = get_string('block19linkdesc', 'theme_almondb');
+    $description = $description.get_string('underline', 'theme_almondb');
+    $default = get_string('buttonlink', 'theme_almondb');
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $page->add($setting);
 }

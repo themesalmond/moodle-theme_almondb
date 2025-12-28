@@ -50,9 +50,9 @@ $description = get_string('block20logodesc', 'theme_almondb');
 $description = $description.get_string('underline', 'theme_almondb');
 $default = "None";
 $options = [
-     'None' => 'None',
-     'Logo' => 'Logo',
-     'Small logo' => 'Small logo',
+    'None' => 'None',
+    'Logo' => 'Logo',
+    'Small logo' => 'Small logo',
 ];
 $setting = new admin_setting_configselect($name, $title, $description, $default, $options);
 $setting->set_updatedcallback('theme_reset_all_caches');

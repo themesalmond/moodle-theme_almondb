@@ -66,36 +66,36 @@ $page->add($setting);
 // Block 05 general settings END.
 // ------------------------------------------------------------------------------------.
 for ($i = 1; $i <= 3; $i++) {
-     // Block 05 icon .
-     $name = 'theme_almondb/block05icon'.$i;
-     $title = get_string('block05icon', 'theme_almondb', ['block' => $i]);
-     $description = get_string('block05icondesc', 'theme_almondb');
-     $default = get_string('block05icondefault'.$i, 'theme_almondb');
-     $options = [];
-     $options[] = theme_almondb_get_core_icon_list();
-     $setting = new admin_setting_configselect($name, $title, $description, $default, $options);
-     $setting->set_updatedcallback('theme_reset_all_caches');
-     $page->add($setting);
-     // Block 05 title.
-     $name = 'theme_almondb/block05title'.$i;
-     $title = get_string('block05title', 'theme_almondb', ['block' => $i]);
-     $description = get_string('block05titledesc', 'theme_almondb');
-     $default = 'WHY CHOOSE US '.$i;
-     $setting = new admin_setting_configtext($name, $title, $description, $default);
-     $page->add($setting);
-     // Block 05 caption.
-     $name = 'theme_almondb/block05caption'.$i;
-     $title = get_string('block05caption', 'theme_almondb', ['block' => $i]);
-     $description = get_string('block05captiondesc', 'theme_almondb');
-     $default = 'Latest caption'.$i;
-     $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_RAW, '1', '2');
-     $page->add($setting);
-     // Block 05 link .
-     $name = 'theme_almondb/block05link'.$i;
-     $title = get_string('block05link', 'theme_almondb', ['block' => $i]);
-     $description = get_string('block05linkdesc', 'theme_almondb');
-     $description = $description.get_string('underline', 'theme_almondb');
-     $default = "https://moodle.org/";
-     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
-     $page->add($setting);
+    // Block 05 icon .
+    $name = 'theme_almondb/block05icon'.$i;
+    $title = get_string('block05icon', 'theme_almondb', ['block' => $i]);
+    $description = get_string('block05icondesc', 'theme_almondb');
+    $default = get_string('block05icondefault'.$i, 'theme_almondb');
+    $options = [];
+    $options[] = theme_almondb_get_core_icon_list();
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $options);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+    // Block 05 title.
+    $name = 'theme_almondb/block05title'.$i;
+    $title = get_string('block05title', 'theme_almondb', ['block' => $i]);
+    $description = get_string('block05titledesc', 'theme_almondb');
+    $default = 'WHY CHOOSE US '.$i;
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $page->add($setting);
+    // Block 05 caption.
+    $name = 'theme_almondb/block05caption'.$i;
+    $title = get_string('block05caption', 'theme_almondb', ['block' => $i]);
+    $description = get_string('block05captiondesc', 'theme_almondb');
+    $default = 'Latest caption'.$i;
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_RAW, '1', '2');
+    $page->add($setting);
+    // Block 05 link .
+    $name = 'theme_almondb/block05link'.$i;
+    $title = get_string('block05link', 'theme_almondb', ['block' => $i]);
+    $description = get_string('block05linkdesc', 'theme_almondb');
+    $description = $description.get_string('underline', 'theme_almondb');
+    $default = "https://moodle.org/";
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $page->add($setting);
 }
