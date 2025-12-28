@@ -28,8 +28,13 @@ defined('MOODLE_INTERNAL') || die();
 // Blocks to be excluded when this theme is enabled in the "Add a block" list: Administration, Navigation, Courses and
 // Section links.
 $default = 'navigation,settings,course_list,section_links';
-$setting = new admin_setting_configtext('theme_almondb/unaddableblocks',
-    get_string('unaddableblocks', 'theme_almondb'), get_string('unaddableblocks_desc', 'theme_almondb'), $default, PARAM_TEXT);
+$setting = new admin_setting_configtext(
+    'theme_almondb/unaddableblocks',
+    get_string('unaddableblocks', 'theme_almondb'),
+    get_string('unaddableblocks_desc', 'theme_almondb'),
+    $default,
+    PARAM_TEXT
+);
 $page->add($setting);
 
 // Preset.
@@ -59,8 +64,14 @@ $name = 'theme_almondb/presetfiles';
 $title = get_string('presetfiles', 'theme_almondb');
 $description = get_string('presetfiles_desc', 'theme_almondb');
 
-$setting = new admin_setting_configstoredfile($name, $title, $description, 'preset', 0,
-    ['maxfiles' => 20, 'accepted_types' => ['.scss']]);
+$setting = new admin_setting_configstoredfile(
+    $name,
+    $title,
+    $description,
+    'preset',
+    0,
+    ['maxfiles' => 20, 'accepted_types' => ['.scss']]
+);
 $page->add($setting);
 
 // Background image setting.

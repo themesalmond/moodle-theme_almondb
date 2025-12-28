@@ -80,13 +80,15 @@ function almondb_get_course_image($id) {
     $files = $fs->get_area_files($context->id, 'course', 'overviewfiles', 0);
     foreach ($files as $f) {
         if ($f->is_valid_image()) {
-            $url = moodle_url::make_pluginfile_url($f->get_contextid(),
-            $f->get_component(),
-            $f->get_filearea(),
-            null,
-            $f->get_filepath(),
-            $f->get_filename(),
-            false);
+            $url = moodle_url::make_pluginfile_url(
+                $f->get_contextid(),
+                $f->get_component(),
+                $f->get_filearea(),
+                null,
+                $f->get_filepath(),
+                $f->get_filename(),
+                false
+            );
         }
     }
     return $url;
@@ -99,19 +101,21 @@ function almondb_get_course_image($id) {
 function almondb_get_blog_post_image($id) {
     global $CFG;
     $url = '';
-    require_once( $CFG->libdir . '/filelib.php' );
+    require_once($CFG->libdir . '/filelib.php');
     $syscontext = context_system::instance();
     $fs = get_file_storage();
     $files = $fs->get_area_files($syscontext->id, 'blog', 'attachment', $id);
     foreach ($files as $f) {
         if ($f->is_valid_image()) {
-            $url = moodle_url::make_pluginfile_url($f->get_contextid(),
-            $f->get_component(),
-            $f->get_filearea(),
-            $id,
-            $f->get_filepath(),
-            $f->get_filename(),
-            false);
+            $url = moodle_url::make_pluginfile_url(
+                $f->get_contextid(),
+                $f->get_component(),
+                $f->get_filearea(),
+                $id,
+                $f->get_filepath(),
+                $f->get_filename(),
+                false
+            );
         }
     }
     return $url;
@@ -124,19 +128,21 @@ function almondb_get_blog_post_image($id) {
 function almondb_get_user_image($id) {
     global $CFG;
     $url = '';
-    require_once( $CFG->libdir . '/filelib.php' );
-    $context = context_user::instance( $id );
+    require_once($CFG->libdir . '/filelib.php');
+    $context = context_user::instance($id);
     $fs = get_file_storage();
-    $files = $fs->get_area_files( $context->id, 'user', 'icon', 'almondb', false);
+    $files = $fs->get_area_files($context->id, 'user', 'icon', 'almondb', false);
     foreach ($files as $f) {
         if ($f->is_valid_image()) {
-            $url = moodle_url::make_pluginfile_url($f->get_contextid(),
-            $f->get_component(),
-            $f->get_filearea(),
-            null,
-            $f->get_filepath(),
-            $f->get_filename(),
-            false);
+            $url = moodle_url::make_pluginfile_url(
+                $f->get_contextid(),
+                $f->get_component(),
+                $f->get_filearea(),
+                null,
+                $f->get_filepath(),
+                $f->get_filename(),
+                false
+            );
         }
     }
     return $url;
@@ -147,7 +153,7 @@ function almondb_get_user_image($id) {
  * @return url
  */
 function theme_almondb_frontpageblockcategory($id) {
-    GLOBAL  $DB;
+    global $DB;
     $category = $DB->get_record('course_categories', ['id' => $id]);
     if (!empty($category)) {
         $categoryname = $category->name;
@@ -166,7 +172,8 @@ function theme_almondb_links($links) {
     foreach ($websettings as $key => $settingval) {
         $expset = explode("|", $settingval);
         if (isset($expset[0]) && isset($expset[1])) {
-            list($ltxt, $lurl) = $expset;
+            $ltxt = $expset[0];
+            $lurl = $expset[1];
         } else {
             $ltxt = $expset[0];
             $lurl = "#";
@@ -233,7 +240,8 @@ function theme_almondb_header_links($links, $mobil) {
                         $blank = trim($expset[2]);
                     }
                     if (isset($expset[1])) {
-                        list($ltxt, $lurl) = $expset;
+                        $ltxt = $expset[0];
+                        $lurl = $expset[1];
                         $ltxt = trim(substr($ltxt, 1, strlen($ltxt)));
                         $lurl = trim($lurl);
                         $content .= "<a class='dropdown-item' role='menuitem'

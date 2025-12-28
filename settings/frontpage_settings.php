@@ -26,8 +26,16 @@
 defined('MOODLE_INTERNAL') || die();
 $page = new admin_settingpage('theme_almondb_frontpage', get_string('frontpagealmondb', 'theme_almondb'));
 // Frontpage heading select.
-$page->add(new admin_setting_heading('theme_almondb_frontpagenav', get_string('frontpagenav', 'theme_almondb'),
-format_text(get_string('frontpagenavdesc', 'theme_almondb'), FORMAT_MARKDOWN)));
+$page->add(
+    new admin_setting_heading(
+        'theme_almondb_frontpagenav',
+        get_string('frontpagenav', 'theme_almondb'),
+        format_text(
+            get_string('frontpagenavdesc', 'theme_almondb'),
+            FORMAT_MARKDOWN
+        )
+    )
+);
 $name = 'theme_almondb/frontpagenavchoice';
 $title = get_string('frontpagenavchoice', 'theme_almondb');
 $description = get_string('frontpagenavchoicedesc', 'theme_almondb');
@@ -93,9 +101,16 @@ $default = "";
 $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_TEXT);
 $page->add($setting);
 // Frontpage choice.
-$page->add(new admin_setting_heading('theme_almondb_frontpagehead', get_string('frontpageheading', 'theme_almondb'),
-format_text(get_string('frontpagedesc', 'theme_almondb'), FORMAT_MARKDOWN)));
-
+$page->add(
+    new admin_setting_heading(
+        'theme_almondb_frontpagehead',
+        get_string('frontpageheading', 'theme_almondb'),
+        format_text(
+            get_string('frontpagedesc', 'theme_almondb'),
+            FORMAT_MARKDOWN
+        )
+    )
+);
 // Frontpage design select.
 $name = 'theme_almondb/frontpagechoice';
 $title = get_string('frontpagechoice', 'theme_almondb');
@@ -136,6 +151,14 @@ $setting = new admin_setting_configcolourpicker($name, $title, $description, '')
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-$page->add(new admin_setting_heading('theme_almondb_frontpageend', get_string('frontpageend', 'theme_almondb'),
-format_text(get_string('frontpageenddesc', 'theme_almondb'), FORMAT_MARKDOWN)));
+$page->add(
+    new admin_setting_heading(
+        'theme_almondb_frontpageend',
+        get_string('frontpageend', 'theme_almondb'),
+        format_text(
+            get_string('frontpageenddesc', 'theme_almondb'),
+            FORMAT_MARKDOWN
+        )
+    )
+);
 $settings->add($page);

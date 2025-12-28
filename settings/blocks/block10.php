@@ -66,7 +66,7 @@ $count = get_config('theme_almondb', 'block10count');
 $name = 'theme_almondb/block10header';
 $title = get_string('block10header', 'theme_almondb');
 $description = get_string('block10headerdesc', 'theme_almondb');
-$description = $description.get_string('underline', 'theme_almondb');
+$description = $description . get_string('underline', 'theme_almondb');
 $default = get_string('block10headerdefault', 'theme_almondb');
 $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_TEXT);
 $page->add($setting);
@@ -74,38 +74,38 @@ $page->add($setting);
 // ------------------------------------------------------------------------------------.
 for ($i = 1; $i < $count + 1; $i++) {
     // Block 10 img.
-    $name = 'theme_almondb/sliderimageblock10img'.$i;
+    $name = 'theme_almondb/sliderimageblock10img' . $i;
     $title = get_string('sliderimageblock10img', 'theme_almondb', ['block' => $i]);
     $description = get_string('block10imgdesc', 'theme_almondb');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'sliderimageblock10img'.$i);
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'sliderimageblock10img' . $i);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
     // Block 10 name.
-    $name = 'theme_almondb/block10name'.$i;
+    $name = 'theme_almondb/block10name' . $i;
     $title = get_string('block10name', 'theme_almondb', ['block' => $i]);
     $description = get_string('block10namedesc', 'theme_almondb');
     $default = "";
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_TEXT);
     $page->add($setting);
     // Block 10 job.
-    $name = 'theme_almondb/block10job'.$i;
+    $name = 'theme_almondb/block10job' . $i;
     $title = get_string('block10job', 'theme_almondb', ['block' => $i]);
     $description = get_string('block10jobdesc', 'theme_almondb');
     $default = "";
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_TEXT);
     $page->add($setting);
     // Block 10 caption.
-    $name = 'theme_almondb/block10caption'.$i;
+    $name = 'theme_almondb/block10caption' . $i;
     $title = get_string('block10caption', 'theme_almondb', ['block' => $i]);
     $description = get_string('block10captiondesc', 'theme_almondb');
     $default = "";
     $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_RAW, '1', '3');
     $page->add($setting);
     // Block 10 button link.
-    $name = 'theme_almondb/block10link'.$i;
+    $name = 'theme_almondb/block10link' . $i;
     $title = get_string('block10link', 'theme_almondb', ['block' => $i]);
     $description = get_string('block10linkdesc', 'theme_almondb');
-    $description = $description.get_string('underline', 'theme_almondb');
+    $description = $description . get_string('underline', 'theme_almondb');
     $default = get_string('buttonlink', 'theme_almondb');
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $page->add($setting);

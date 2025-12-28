@@ -40,6 +40,14 @@ require('blocks/block18.php');
 require('blocks/block19.php');
 require('blocks/block20.php');
 // Block end.
-$page->add(new admin_setting_heading('theme_almondb_blockend', get_string('theme_almondb_frontpageblockend', 'theme_almondb'),
-format_text(get_string('theme_almondb_frontpageblockenddesc', 'theme_almondb'), FORMAT_MARKDOWN)));
+$page->add(
+    new admin_setting_heading(
+        'theme_almondb_blockend',
+        get_string('theme_almondb_frontpageblockend', 'theme_almondb'),
+        format_text(
+            get_string('theme_almondb_frontpageblockenddesc', 'theme_almondb'),
+            FORMAT_MARKDOWN
+        )
+    )
+);
 $settings->add($page);

@@ -74,5 +74,5 @@ $name = 'theme_almondb/block11caption';
 $title = get_string('block11caption', 'theme_almondb');
 $description = get_string('block11captiondesc', 'theme_almondb');
 $default = get_string('block11captiondefault', 'theme_almondb');
-$setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_RAW, '1', '2');;
+$setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_RAW, '1', '2');
 $page->add($setting);

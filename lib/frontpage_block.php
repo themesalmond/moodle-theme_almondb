@@ -377,8 +377,14 @@ function theme_almondb_frontpageblock08() {
             $templatecontext['block08'][$j]['showdescription'] = $theme->settings->block08description;
             if ($user = $DB->get_record('user', ['id' => $roleassignment->userid])) {
                 $personcontext = context_user::instance($user->id);
-                $description = file_rewrite_pluginfile_urls($user->description, 'pluginfile.php',
-                $personcontext->id, 'user', 'profile', false);
+                $description = file_rewrite_pluginfile_urls(
+                    $user->description,
+                    'pluginfile.php',
+                    $personcontext->id,
+                    'user',
+                    'profile',
+                    false
+                );
                 $user->imagealt = "teacher";
                 $templatecontext['block08'][$j]['teachername'] = format_string($user->firstname . " " . $user->lastname);
                 $templatecontext['block08'][$j]['description'] = format_text($description);
@@ -423,7 +429,7 @@ function theme_almondb_frontpageblock08() {
  */
 function theme_almondb_frontpageblock09() {
     global $CFG, $DB;
-    require_once($CFG->libdir.'/formslib.php');
+    require_once($CFG->libdir . '/formslib.php');
     $theme = theme_config::load('almondb');
     $templatecontext['block09enabled'] = $theme->settings->block09enabled;
     if (empty($templatecontext['block09enabled'])) {
@@ -447,7 +453,7 @@ function theme_almondb_frontpageblock09() {
     }
     $sql = $sql . " ORDER BY coursecount DESC";
     if ($CFG->dbtype != 'sqlsrv') {
-        $sql = $sql . " LIMIT ". $count;
+        $sql = $sql . " LIMIT " . $count;
     }
     $categorys = $DB->get_records_sql($sql, []);
     if (!empty($categorys)) {
@@ -493,7 +499,7 @@ function theme_almondb_frontpageblock10() {
     if (empty($templatecontext['block10enabled'])) {
         return $templatecontext;
     }
-    $templatecontext['block10design'.$theme->settings->block10design] = $theme->settings->block10design;
+    $templatecontext['block10design' . $theme->settings->block10design] = $theme->settings->block10design;
     $templatecontext['block10header'] = format_string($theme->settings->block10header);
     $count = $theme->settings->block10count;
     for ($i = 1, $j = 0; $i <= $count; $i++, $j++) {
@@ -535,7 +541,7 @@ function theme_almondb_frontpageblock11() {
     if (empty($templatecontext['block11enabled'])) {
         return $templatecontext;
     }
-    $templatecontext['block11design'.$theme->settings->block11design] = $theme->settings->block11design;
+    $templatecontext['block11design' . $theme->settings->block11design] = $theme->settings->block11design;
     $templatecontext['block11header'] = format_string($theme->settings->block11header);
     $templatecontext['block11caption'] = format_text($theme->settings->block11caption);
     $count = $theme->settings->block11count;
@@ -580,7 +586,7 @@ function theme_almondb_frontpageblock11() {
             $by = new stdClass();
             $by->name = fullname($user);
             $by->date = userdate($post->created);
-            $templatecontext['block11'][$j]['userdate'] = $OUTPUT->container( $by->date, 'userdate');
+            $templatecontext['block11'][$j]['userdate'] = $OUTPUT->container($by->date, 'userdate');
             $j++;
         }
     }
@@ -613,7 +619,7 @@ function theme_almondb_frontpageblock19() {
     if (empty($templatecontext['block19enabled'])) {
         return $templatecontext;
     }
-    $templatecontext['block19design'.$theme->settings->block19design] = $theme->settings->block19design;
+    $templatecontext['block19design' . $theme->settings->block19design] = $theme->settings->block19design;
     $templatecontext['block19headerenabled'] = $theme->settings->block19headerenabled;
     if (!empty($templatecontext['block19headerenabled'])) {
         $templatecontext['block19header'] = format_string($theme->settings->block19header);

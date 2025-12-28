@@ -25,8 +25,16 @@
 
 defined('MOODLE_INTERNAL') || die();
 $page = new admin_settingpage('theme_almondb_slide', get_string('slideshow', 'theme_almondb'));
-$page->add(new admin_setting_heading('theme_almondb_slideshow', get_string('slideshowheading', 'theme_almondb'),
-format_text(get_string('slideshowheadingdesc', 'theme_almondb'), FORMAT_MARKDOWN)));
+$page->add(
+    new admin_setting_heading(
+        'theme_almondb_slideshow',
+        get_string('slideshowheading', 'theme_almondb'),
+        format_text(
+            get_string('slideshowheadingdesc', 'theme_almondb'),
+            FORMAT_MARKDOWN
+        )
+    )
+);
 // Slideshow design select.
 $name = 'theme_almondb/sliderdesign';
 $title = get_string('sliderdesign', 'theme_almondb');
@@ -105,12 +113,12 @@ for ($count = 1; $count <= $slidercount; $count++) {
     $setting = new admin_setting_heading($name, $heading, $information);
     $page->add($setting);
     // Slider image.
-    $fileid = 'sliderimage'.$count;
-    $name = 'theme_almondb/sliderimage'.$count;
+    $fileid = 'sliderimage' . $count;
+    $name = 'theme_almondb/sliderimage' . $count;
     $title = get_string('sliderimage', 'theme_almondb');
     $description = get_string('sliderimagedesc', 'theme_almondb');
     $opts = ['accepted_types' => ['.png', '.jpg', '.gif', '.webp', '.tiff', '.svg'], 'maxfiles' => 1];
-    $setting = new admin_setting_configstoredfile($name, $title, $description, $fileid,  0, $opts);
+    $setting = new admin_setting_configstoredfile($name, $title, $description, $fileid, 0, $opts);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
     // Slider title.
@@ -134,13 +142,21 @@ for ($count = 1; $count <= $slidercount; $count++) {
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_TEXT);
     $page->add($setting);
     // Slide button link.
-    $name = 'theme_almondb/sliderurl'. $count;
+    $name = 'theme_almondb/sliderurl' . $count;
     $title = get_string('sliderbuttonurl', 'theme_almondb');
     $description = get_string('sliderbuttonurldesc', 'theme_almondb');
     $default = 'http://www.example.com/';
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $page->add($setting);
 }
-$page->add(new admin_setting_heading('theme_almondb_slideend', get_string('slideshowend', 'theme_almondb'),
-format_text(get_string('slideshowenddesc', 'theme_almondb'), FORMAT_MARKDOWN)));
+$page->add(
+    new admin_setting_heading(
+        'theme_almondb_slideend',
+        get_string('slideshowend', 'theme_almondb'),
+        format_text(
+            get_string('slideshowenddesc', 'theme_almondb'),
+            FORMAT_MARKDOWN
+        )
+    )
+);
 $settings->add($page);

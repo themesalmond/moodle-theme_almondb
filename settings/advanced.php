@@ -29,20 +29,24 @@ defined('MOODLE_INTERNAL') || die();
     $page = new admin_settingpage('theme_almondb_advanced', get_string('advancedsettings', 'theme_almondb'));
 
     // Raw SCSS to include before the content.
-    $setting = new admin_setting_scsscode('theme_almondb/scsspre',
-    get_string('rawscsspre', 'theme_almondb'),
-    get_string('rawscsspre_desc', 'theme_almondb'),
-    '',
-    PARAM_RAW);
+    $setting = new admin_setting_scsscode(
+        'theme_almondb/scsspre',
+        get_string('rawscsspre', 'theme_almondb'),
+        get_string('rawscsspre_desc', 'theme_almondb'),
+        '',
+        PARAM_RAW
+    );
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
     // Raw SCSS to include after the content.
-    $setting = new admin_setting_scsscode('theme_almondb/scss',
-    get_string('rawscss', 'theme_almondb'),
-    get_string('rawscss_desc', 'theme_almondb'),
-    '',
-    PARAM_RAW);
+    $setting = new admin_setting_scsscode(
+        'theme_almondb/scss',
+        get_string('rawscss', 'theme_almondb'),
+        get_string('rawscss_desc', 'theme_almondb'),
+        '',
+        PARAM_RAW
+    );
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
     $settings->add($page);

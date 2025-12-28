@@ -24,7 +24,7 @@
  */
 
 defined('MOODLE_INTERNAL') || die();
-GLOBAL  $DB;
+global $DB;
 // Block 09 info.
 $name = 'theme_almondb/block09info';
 $heading = get_string('block09info', 'theme_almondb');
@@ -87,7 +87,7 @@ $name = 'theme_almondb/block09caption';
 $title = get_string('block09caption', 'theme_almondb');
 $description = get_string('block09captiondesc', 'theme_almondb');
 $default = get_string('block09captiondefault', 'theme_almondb');
-$setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_RAW, '1', '2');;
+$setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_RAW, '1', '2');
 $page->add($setting);
 // Block 09 category id select.
 $name = 'theme_almondb/block09ctgid';

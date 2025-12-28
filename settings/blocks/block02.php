@@ -97,7 +97,7 @@ for ($i = 1; $i < $count + 1; $i++) {
     $name = 'theme_almondb/block02buttonlink' . $i;
     $title = get_string('block02buttonlink', 'theme_almondb', ['block' => $i]);
     $description = get_string('block02buttonlinkdesc', 'theme_almondb');
-    $description = $description.get_string('underline', 'theme_almondb');
+    $description = $description . get_string('underline', 'theme_almondb');
     $default = get_string('buttonlink', 'theme_almondb');
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $page->add($setting);

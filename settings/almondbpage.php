@@ -25,9 +25,19 @@
 
 defined('MOODLE_INTERNAL') || die();
 $page = new admin_settingpage('theme_almondb_almondbpage', get_string('almondbpage', 'theme_almondb'));
-$page->add(new admin_setting_heading('theme_almondb_almondbpage',
-get_string('almondbpageheading', 'theme_almondb'),
-format_text(get_string('almondbpageheadingdesc', 'theme_almondb'), FORMAT_MARKDOWN)));
+$page->add(
+    new admin_setting_heading(
+        'theme_almondb_almondbpage',
+        get_string('almondbpageheading', 'theme_almondb'),
+        format_text(
+            get_string(
+                'almondbpageheadingdesc',
+                'theme_almondb'
+            ),
+            FORMAT_MARKDOWN
+        )
+    )
+);
 // Enable or disable page settings.
 $name = 'theme_almondb/almondbpageenabled';
 $title = get_string('almondbpageenabled', 'theme_almondb');
@@ -171,11 +181,11 @@ for ($count = 1; $count <= $almondbpagecount; $count++) {
     $title = get_string('almondbpageimagesimple', 'theme_almondb');
     $description = get_string('almondbpageimagesimpledesc', 'theme_almondb');
     $opts = ['accepted_types' => ['.png', '.jpg', '.gif', '.webp', '.tiff', '.svg'], 'maxfiles' => 1];
-    $setting = new admin_setting_configstoredfile($name, $title, $description, $fileid,  0, $opts);
+    $setting = new admin_setting_configstoredfile($name, $title, $description, $fileid, 0, $opts);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
     // Count page settings.
-    $name = 'theme_almondb/almondbpageimgpositionsimple'.$count;
+    $name = 'theme_almondb/almondbpageimgpositionsimple' . $count;
     $title = get_string('almondbpageimgpositionsimple', 'theme_almondb');
     $description = get_string('almondbpageimgpositionsimpledesc', 'theme_almondb');
     $default = 1;
@@ -190,7 +200,7 @@ for ($count = 1; $count <= $almondbpagecount; $count++) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
     // Page caption.
-    $name = 'theme_almondb/almondbpagecapsimple'.$count;
+    $name = 'theme_almondb/almondbpagecapsimple' . $count;
     $title = get_string('almondbpagecaptionsimple', 'theme_almondb');
     $description = get_string('almondbpagecaptionsimpledesc', 'theme_almondb');
     $default = '';
@@ -198,20 +208,28 @@ for ($count = 1; $count <= $almondbpagecount; $count++) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
     // Add header to info page.
-    $name = 'theme_almondb/almondbpageheadersimple'. $count;
+    $name = 'theme_almondb/almondbpageheadersimple' . $count;
     $title = get_string('almondbpageheadersimple', 'theme_almondb');
     $description = get_string('almondbpageheadersimpledesc', 'theme_almondb');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
     // Add footer to info page.
-    $name = 'theme_almondb/almondbpagefootersimple'. $count;
+    $name = 'theme_almondb/almondbpagefootersimple' . $count;
     $title = get_string('almondbpagefootersimple', 'theme_almondb');
     $description = get_string('almondbpagefootersimpledesc', 'theme_almondb');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 }
-$page->add(new admin_setting_heading('theme_almondb_almondbpageend', get_string('almondbpageend', 'theme_almondb'),
-format_text(get_string('almondbpageenddesc', 'theme_almondb'), FORMAT_MARKDOWN)));
+$page->add(
+    new admin_setting_heading(
+        'theme_almondb_almondbpageend',
+        get_string('almondbpageend', 'theme_almondb'),
+        format_text(
+            get_string('almondbpageenddesc', 'theme_almondb'),
+            FORMAT_MARKDOWN
+        )
+    )
+);
 $settings->add($page);
