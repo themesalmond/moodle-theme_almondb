@@ -261,14 +261,14 @@ input:focus {
 }
 
 .hire-us-button {
-    border-color: #fff !important;
+    border-color: #fff;
     padding: 15px 40px;
-    background: transparent !important;
+    background: transparent;
 }
 
 .hire-us-button:hover {
-    background: #333 !important;
-    color: #fff !important;
+    background: #333;
+    color: #fff;
 }
 
 .hire-us-area {
@@ -1033,7 +1033,7 @@ body.scrolled .scrollUp {
         text-align: center;
     }
 
-    .hire-us-area .col-12.text-right {
+    .hire-us-area .col-12.text-end {
         text-align: center !important;
         margin-top: 20px;
     }
