@@ -1,15 +1,14 @@
 // Almond special additions.
 // Template color.
 $hythemecolor:   #4272d7 !default;
-$hybackcolor:    #fff !default;      
-$hynavbar:       #fff  !default;
+$hybackcolor:    #fff !default;
+$hynavbar:       #fff !default;
 
 $theme-colors: map-merge(
-(
-    hynavbar :$hynavbar,
-    hybackcolor : $hybackcolor,
-), 
-$theme-colors);
+    (
+        hynavbar :$hynavbar,
+        hybackcolor : $hybackcolor,
+    ), $theme-colors);
 
 // Tables
 $table-accent-bg:             rgba(#000, .03) !default;
@@ -71,7 +70,7 @@ $input-btn-focus-width:       .1rem !default;
 $input-btn-focus-color:       rgba($hythemecolor, .05) !default;
 $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
 
-// Boost moodle varaibles.scss file. 
+// Boost moodle varaibles.scss file.
 $course-content-maxwidth: 1280px !default;
 
 // Almond special additions end.

@@ -228,6 +228,7 @@
 nav.navbar .logo img {
     max-height: unset;
 }
+
 @include media-breakpoint-between(md, lg) {
     #navnarhy_top .logo img {
         height: 40px;
@@ -241,6 +242,7 @@ nav.navbar .logo img {
         height: 60px;
     }*/
 }
+
 @include media-breakpoint-between(sm, md) {
     #navnarhy_top .logo img {
         height: 30px;
