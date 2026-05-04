@@ -31,45 +31,18 @@
 }}
 {{> theme_boost/head }}
 
-<body {{{ bodyattributes }}} onload="loginFunction()">
+<body {{{ bodyattributes }}}>
 {{> core/local/toast/wrapper}}
 
-<div id="page-wrapper" class="login-background">
+<div id="page-wrapper">
 
     {{{ output.standard_top_of_body_html }}}
 
-    <div id="page" class="container-fluid pt-5 mt-0">
-        <div id="page-content" class="row">
-            <div id="region-main-box" class="col-12">
-                <div id="region-main" class="col-12 h-100" aria-label="{{#str}}content{{/str}}">
-                <div class="login-wrapper">
-                    <div class="login-container">
-                    {{{ output.main_content }}}
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
+    <div id="page" class="mt-0">
+        {{> core/login_layout }}
     </div>
     {{> theme_boost/footer }}
 </div>
-<script>
-    "use strict";
-    function loginFunction() {
-        var var_loginimageurl = '{{loginimageurl}}';
-        if  (var_loginimageurl) {
-            var_loginimageurl = "url('{{loginimageurl}}')";
-            document.documentElement.style.setProperty('--login-background-img', var_loginimageurl);
-            var position = document.querySelectorAll('#page');
-            for (var i=0; i<position.length; i++) {
-                position[i].className = 'container-fluid pt-5 mt-0 pagelayout-login-page';
-            }
-        }
-
-        var position = '{{loginposition}}';
-        document.getElementsByClassName('login-wrapper')[0].style.setProperty("justify-content", position, "important");
-    }
-</script>
 </body>
 </html>
 {{#js}}

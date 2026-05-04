@@ -42,6 +42,7 @@
 <body {{{ bodyattributes }}}>
 
 {{> core/local/toast/wrapper}}
+{{{ output.standard_top_of_body_html }}}
 <!-- Start Header Area -->
     {{#frontpagenavchoice2}}
          {{> theme_almondb/frontpage/header2}}
@@ -65,9 +66,8 @@
         <i class="fa fa-angle-up scrollUp"></i>
     </a>
 </div>
-
-{{> theme_almondb/frontpage/setup1}} 
-
+{{> theme_almondb/frontpage/setup1}}
+{{{ output.standard_end_of_body_html }}}
 </body>   
 </html>
 

@@ -34,19 +34,6 @@ $setting = new admin_setting_configcolourpicker($name, $title, $description, '')
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 // Must add the page after definiting all the settings!
-// Login page position select.
-$name = 'theme_almondb/loginposition';
-$title = get_string('loginposition', 'theme_almondb');
-$description = get_string('loginpositiondesc', 'theme_almondb');
-$default = "center";
-$options = [
-    'Center' => 'Center',
-    'flex-start' => 'Left',
-    'flex-end' => 'Right',
-];
-$setting = new admin_setting_configselect($name, $title, $description, $default, $options);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
 // Dashboard footer select.
 $name = 'theme_almondb/footerselect';
 $title = get_string('footerselect', 'theme_almondb');
