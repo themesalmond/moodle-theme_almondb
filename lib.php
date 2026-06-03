@@ -38,19 +38,6 @@ function theme_almondb_page_init(moodle_page $PAGE) {
 }
 
 /**
- * Post process the CSS tree.
- *
- * @param string $tree The CSS tree.
- * @param theme_config $theme The theme config object.
- */
-function theme_almondb_css_tree_post_processor($tree, $theme) {
-    error_log('theme_almondb_css_tree_post_processor() is deprecated. Required' .
-        'prefixes for Bootstrap are now in theme/almondb/scss/moodle/prefixes.scss');
-    $prefixer = new theme_almondb\autoprefixer($tree);
-    $prefixer->prefix();
-}
-
-/**
  * Inject additional SCSS.
  *
  * @param theme_config $theme The theme config object.
@@ -217,7 +204,7 @@ function theme_almondb_get_pre_scss($theme) {
         if (empty($value)) {
             continue;
         }
-        array_map(function($target) use (&$scss, $value) {
+        array_map(function ($target) use (&$scss, $value) {
             $scss .= '$' . $target . ': ' . $value . ";\n";
         }, (array) $targets);
     }
