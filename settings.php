@@ -32,6 +32,7 @@ if ($ADMIN->fulltree) {
     require_once('settings/iconlist.php');
     require('settings/general.php');
     require('settings/advanced.php');
+    require('settings/experimental.php');
     require('settings/theme.php');
     require('settings/frontpage_settings.php');
     require('settings/almondbpage.php');

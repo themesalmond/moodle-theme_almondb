@@ -31,6 +31,7 @@ defined('MOODLE_INTERNAL') || die();
  * @param moodle_page $PAGE parameter.
  */
 function theme_almondb_page_init(moodle_page $PAGE) {
+    $PAGE->requires->css('/theme/almondb/style/style.css');
     $PAGE->requires->css('/theme/almondb/style/frontpage.css');
     $PAGE->requires->css('/theme/almondb/style/splide.min.css');
     $PAGE->requires->js('/theme/almondb/js/splide.min.js');

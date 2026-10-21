@@ -25,6 +25,8 @@
 namespace theme_almondb\privacy;
 
 use core_privacy\local\metadata\collection;
+use core_privacy\local\request\writer;
+use theme_boost\colour_mode;
 
 /**
  * The boost theme stores a user preference data.
@@ -43,6 +45,9 @@ class provider implements
     /** The user preferences for the blocks drawer. */
     const DRAWER_OPEN_BLOCK = 'drawer-open-block';
 
+    /** The user preference for the light or dark colour mode. */
+    public const COLOUR_MODE = colour_mode::PREFERENCE;
+    
     /**
      * Returns meta data about this system.
      *
@@ -52,6 +57,7 @@ class provider implements
     public static function get_metadata(collection $items): collection {
         $items->add_user_preference(self::DRAWER_OPEN_INDEX, 'privacy:metadata:preference:draweropenindex');
         $items->add_user_preference(self::DRAWER_OPEN_BLOCK, 'privacy:metadata:preference:draweropenblock');
+        $items->add_user_preference(self::COLOUR_MODE, 'privacy:metadata:preference:colourmode');
         return $items;
     }
 
@@ -69,7 +75,7 @@ class provider implements
             if ($draweropenindexpref == 1) {
                 $preferencestring = get_string('privacy:drawerindexopen', 'theme_almondb');
             }
-            \core_privacy\local\request\writer::export_user_preference(
+            writer::export_user_preference(
                 'theme_almondb',
                 self::DRAWER_OPEN_INDEX,
                 $draweropenindexpref,
@@ -84,11 +90,22 @@ class provider implements
             if ($draweropenblockpref == 1) {
                 $preferencestring = get_string('privacy:drawerblockopen', 'theme_almondb');
             }
-            \core_privacy\local\request\writer::export_user_preference(
+            writer::export_user_preference(
                 'theme_almondb',
                 self::DRAWER_OPEN_BLOCK,
                 $draweropenblockpref,
                 $preferencestring
+            );
+        }
+        
+        $colourmodepref = get_user_preferences(self::COLOUR_MODE, null, $userid);
+
+        if (colour_mode::is_valid_mode($colourmodepref)) {
+            writer::export_user_preference(
+                'theme_boost',
+                self::COLOUR_MODE,
+                $colourmodepref,
+                get_string('privacy:colourmode:' . $colourmodepref, 'theme_boost')
             );
         }
     }
