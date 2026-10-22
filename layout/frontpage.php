@@ -25,16 +25,14 @@
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir . '/behat/lib.php');
-//require_once($CFG->dirroot . '/course/lib.php');
-
-// Add block button in editing mode.
-$addblockbutton = $OUTPUT->addblockbutton();
 
 if (isloggedin()) {
     $userlogin = true;
 } else {
     $userlogin = false;
 }
+// Add block button in editing mode.
+$addblockbutton = $OUTPUT->addblockbutton();
 $extraclasses = [];
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 
