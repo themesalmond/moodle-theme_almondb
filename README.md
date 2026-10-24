@@ -24,7 +24,7 @@ unlimited color<br>
 Hame page slider<br>
 Info page plugin<br>
 
-Version : 2022102200
+Version : 530.26.1020 (2026102000)
 =====================
 - Categories to be displayed on the front page can be selected.
 - Bugs fixed.
